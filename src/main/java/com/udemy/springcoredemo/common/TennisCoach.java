@@ -6,7 +6,6 @@ import org.springframework.stereotype.Component;
 
 
 @Component
-@Primary
 public class TennisCoach implements Coach{
     @Override
     public String dailyWorkout() {
