@@ -9,22 +9,15 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class DemoController {
 
-    private  Coach myCoach;
-    private  Coach yourCoach;
+    private Coach myCoach;
+
 
     @Autowired
-    public DemoController(@Qualifier("baseballCoach") Coach myCoach,
-                          @Qualifier("baseballCoach") Coach yourCoach) {
+    public DemoController(@Qualifier("baseballCoach") Coach myCoach
+    ) {
         this.myCoach = myCoach;
-        this.yourCoach = yourCoach;
+
     }
 
-    @GetMapping("/workout")
-    public String workout() {
-        return myCoach.dailyWorkout();
-    }
-    @GetMapping("/check")
-    public String check() {
-        return "Is my coach the same as your coach?"+ (myCoach==yourCoach);
-    }
+
 }
