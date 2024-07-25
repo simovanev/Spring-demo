@@ -13,11 +13,12 @@ public class DemoController {
 
 
     @Autowired
-    public DemoController(@Qualifier("baseballCoach") Coach myCoach
-    ) {
+    public DemoController(@Qualifier("swim") Coach myCoach) {
         this.myCoach = myCoach;
-
     }
 
-
+    @GetMapping("action")
+    public String action() {
+        return myCoach.dailyWorkout();
+    }
 }
